@@ -52,7 +52,10 @@ def signup_post():
     db.session.add(new_user)
     db.session.commit()
 
-    return redirect(url_for('auth.login'))
+    names = os.listdir(os.path.join(app.static_folder, 'uploads'))
+    img_url = url_for('static', filename=os.path.join('uploads', choice(names)))
+
+    return redirect(url_for('auth.login', img_url=img_url))
 
 @auth.route('/logout')
 @login_required

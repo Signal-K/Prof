@@ -11,7 +11,7 @@ app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 
 path = os.getcwd()
 # file Upload
-UPLOAD_FOLDER = os.path.join(path, 'uploads')
+UPLOAD_FOLDER = os.path.join(path, 'loginapp/uploads')
 
 if not os.path.isdir(UPLOAD_FOLDER):
     os.mkdir(UPLOAD_FOLDER)
@@ -31,7 +31,7 @@ def index():
 
 @main.route('/uploadme')
 def upload_form():
-    return render_template('upload.html')
+    return render_template('upload.html') # remove Backend folder from master
 
 @main.route('/uploadme', methods=['POST'])
 def uploadme():
