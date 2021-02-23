@@ -1,0 +1,14 @@
+{
+  "name": "react-frontend",
+  "version": "1.0.0",
+  "description": "[Jira issue](https://signal-kinetics.atlassian.net/browse/AAH2-18?atlOrigin=eyJpIjoiZTQzNDJiOWIwMTZiNDkyZDkxYjI0NzliMjUzMmRjY2YiLCJwIjoiaiJ9) [Documentatio](https://acord.software/stellarios/docs/elearning)[n](https://realpython.com/the-ultimate-flask-front-end/)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "bower": "^1.8.12"
+  }
+}
