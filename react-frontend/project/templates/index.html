@@ -6,6 +6,7 @@
     <title>Flask React</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- styles -->
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
   </head>
 <body>
 
@@ -113,9 +114,8 @@
   </div>
 </div>
 
-    <script src="{{ url_for('static', filename='css/style.css') }}"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
-    <script type="text/jsx">  
+    <script src="{{ url_for('static', filename='styles/style.css') }}"></script>
+    
 
 </body>
 </html>
