@@ -1,24 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head lang="en">
-    <meta charset="UTF-8">
-    <title>Flask React</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- styles -->
-  </head>
-  <body>
-    <div class="container">
-      <h1>Flask React</h1>
-      <br>
-      <div id="content"></div>
-    </div>
-    <!-- scripts -->
-    <script src="{{ url_for('static', filename='bower_components/react/react.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='bower_components/react/react-dom.min.js') }}"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
-    <script type="text/jsx">
-
-      import React from "react";
+import React from "react";
 import "./style.css";
 
 function App() {
@@ -158,10 +138,3 @@ const DashboardHomeData = {
     bxbxsuserrectangle2Props: bxbxsuserrectangle2Data,
 };
 
-
-
-      
-
-    </script>
-  </body>
-</html>
