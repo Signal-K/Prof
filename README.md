@@ -1,5 +1,17 @@
-# elearning
-AWS Amplify-powered elearning app demo
+# Signal-K/Elearning
 
-Latest update: https://acord.software/stellarios/docs/elearning#20-22nd-february-2021
-[Commit fix](https://stackoverflow.com/questions/23609991/git-github-commit-at-past-date)
+[Documentation](https://acord.software/stellarios/docs/elearning/#actions)
+
+Run by doing the following:
+
+Download this repository. Install the necessary pip modules into a python/pip virtualenv:
+
+* Flask
+* Flask-wtf
+* Flask-sqlalchemy
+* Flask-login
+* Flask-migrate
+
+And, of course, python
+
+Finally, activate the venv and run the app using `flask run`

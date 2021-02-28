@@ -1,1 +1,1 @@
-FLASK_APP=loginapp
+FLASK_APP=elearning.py
