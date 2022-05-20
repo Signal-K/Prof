@@ -23,7 +23,7 @@ const Profile = () => {
             <div className="profile-info">{user.email}</div>
 
             <div className="label">User Id</div>
-            <div className="profile-info">{user.issuer}</div>
+            <div className="profile-info">{user.issuer}</div> {/* Create a function to compare this address to holders, if so then show more content like in the DAO */}
           </>
         )
       )}

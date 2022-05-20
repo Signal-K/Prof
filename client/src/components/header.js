@@ -61,6 +61,15 @@ const Header = () => {
                 </TextButton>
               </li>
               <li>
+                <TextButton
+                  color="primary"
+                  size="sm"
+                  onPress={() => history.push("/MemberContent")}
+                >
+                  DAO
+                </TextButton>
+              </li>
+              <li>
                 <TextButton color="warning" size="sm" onPress={logout}>
                   Logout
                 </TextButton>
