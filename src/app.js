@@ -18,7 +18,7 @@ import Layout from "./components/layout";
 // Magic/stripe
 import { magic } from "./lib/magic";
 import { loadStripe } from "@stripe/stripe-js";
-import { ELements } from "@stripe/react-stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
 
 const promise = loadStripe(process.env.REACT_APP_STRIPE_PK_KEY);
 
