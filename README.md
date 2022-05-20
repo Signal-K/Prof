@@ -1,2 +1,1 @@
-An exclusive club, built with 💞
-.
+An exclusive club, built with 💞.
