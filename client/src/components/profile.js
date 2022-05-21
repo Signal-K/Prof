@@ -24,6 +24,9 @@ const Profile = () => {
 
             <div className="label">User Id</div>
             <div className="profile-info">{user.issuer}</div> {/* Create a function to compare this address to holders, if so then show more content like in the DAO */}
+            
+
+            
           </>
         )
       )}

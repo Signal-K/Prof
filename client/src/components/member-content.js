@@ -6,6 +6,8 @@ import { LifetimeAccessRequestStatusContext } from "../lib/LifetimeAccessRequest
 import { CallToAction } from "@magiclabs/ui";
 import Loading from "./loading";
 
+<script src="https://api.memberstack.io/static/memberstack.js?custom" data-memberstack-id="364dc741601f8ed38c797805d5e24ef4"> </script> 
+
 const MemberContent = () => { // Content that can only be viewed by members who are logged in (including free members)
     const [user] = useContext(UserContext);
     const history = useHistory();
