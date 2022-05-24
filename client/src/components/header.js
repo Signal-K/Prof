@@ -64,7 +64,7 @@ const Header = () => {
                 <TextButton
                   color="primary"
                   size="sm"
-                  onPress={() => history.push("/MemberContent")}
+                  onPress={() => history.push("https://emulsion.space")}
                 >
                   DAO
                 </TextButton>

@@ -1,8 +1,15 @@
-An exclusive club, built with 💞.
+# Basic Sample Hardhat Project
 
-Currently needs to be run locally (this app is an express server combined with a React application).
-Vercel: [Express server](https://theclub-five.vercel.app/), [React](https://thesociety.vercel.app)
+This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
 
-Log into Stripe & Magic.link for the env variables
+Try running some of the following tasks:
 
-Run `yarn start` in `root` folder (of this repo) and in `client`
+```shell
+npx hardhat accounts
+npx hardhat compile
+npx hardhat clean
+npx hardhat test
+npx hardhat node
+node scripts/sample-script.js
+npx hardhat help
+```
