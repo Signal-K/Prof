@@ -7,7 +7,7 @@ import NavBar from './components/NavBar';
 import { QueryClient, QueryClientProvider, QueryCache } from "react-query";
 import { ChakraProvider, Box, Heading, Button } from '@chakra-ui/react';
 import { Toaster, toast } from "react-hot-toast";
-import { Provider as WagmiProvider } from "wagmi";
+import { WagmiProvider } from "wagmi";
 import { providers } from 'ethers';
 
 // Thirdweb & contract components
