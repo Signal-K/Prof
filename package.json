@@ -49,6 +49,8 @@
     ]
   },
   "devDependencies": {
-    "framer-motion": "^2.3.0"
+    "@babel/plugin-proposal-class-properties": "^7.17.12",
+    "framer-motion": "^2.3.0",
+    "hardhat": "^2.9.6"
   }
 }
