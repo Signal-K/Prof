@@ -13,7 +13,6 @@ import Profile from "./components/profile";
 import Payment from "./components/payment";
 import PaymentForm from "./components/payment-form";
 import Layout from "./components/layout";
-import MemberContent from "./components/member-content";
 
 // Import Magic-related things
 import { magic } from "./lib/magic";
@@ -66,7 +65,6 @@ function App() {
                 <Route path="/signup" component={SignUp} />
                 <Route path="/login" component={Login} />
                 <Route path="/profile" component={Profile} />
-                <Route path="/MemberContent" component={MemberContent} />
                 <Route
                   path="/payment"
                   render={(props) => {

@@ -9,7 +9,7 @@ import { magic } from "../lib/magic";
 const Header = () => {
   const history = useHistory();
   const [user, setUser] = useContext(UserContext);
-  const [lifetimeAccess, setLifetimeAccess] = useContext(LifetimeContext);
+  const [, setLifetimeAccess] = useContext(LifetimeContext);
   const [
     lifetimeAccessRequestStatus,
     setLifetimeAccessRequestStatus,
@@ -58,15 +58,6 @@ const Header = () => {
                   onPress={() => history.push("/profile")}
                 >
                   Profile
-                </TextButton>
-              </li>
-              <li>
-                <TextButton
-                  color="primary"
-                  size="sm"
-                  onPress={() => history.push("https://emulsion.space")}
-                >
-                  DAO
                 </TextButton>
               </li>
               <li>
