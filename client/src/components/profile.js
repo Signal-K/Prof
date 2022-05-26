@@ -2,9 +2,33 @@ import { useEffect, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { UserContext } from "../lib/UserContext";
 import Loading from "./loading";
+import { IonPhaser } from '@ion-phaser/react'
+import Phaser from 'phaser';
 
-// Minigame content
-//import Minigame from "./Minigame/Minigame";
+const game = {
+  width: '100%',
+  height: '100%',
+  type: Phaser.AUTO,
+  scene: {
+    init: function() {
+      this.cameras.main.setBackgroundColor('#24252A');
+    },
+    create: function() {
+      this.helloWorld = this.add.text(
+        this.cameras.main.centerX,
+        this.cameras.main.centerY,
+        "Hello World", {
+          font: "40px Arial",
+          fill: "#ffffff"
+        }
+      );
+      this.helloWorld.setOrigin(0.5);
+    },
+    update: function() {
+      this.helloWorld.angle += 1;
+    }
+  }
+}
 
 const Profile = () => {
   const history = useHistory();
@@ -25,10 +49,10 @@ const Profile = () => {
             <div className="label">Email</div>
             <div className="profile-info">{user.email}</div>
 
-            <div className="label">User Id</div>
+            <a href="https://dao.emulsion.space"><div className="label">User Id</div></a>
             <div className="profile-info">{user.issuer}</div>
 
-            {/*<Minigame />*/}
+            <IonPhaser game={game} />
           </>
         )
       )}
