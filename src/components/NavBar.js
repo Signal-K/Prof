@@ -61,12 +61,12 @@ const NavBar = ({ accounts, setAccounts }) => {
                     width="40%"
                     padding="30px 30px 30px 30px"
                 >
-                    <Link style={{ textDecoration: 'none' }} color="#ffffff" href="https://dao.emulsion.space" target="_blank">
-                        <Box margin="0 15px">Enter the DAO</Box>
+                    <Link style={{ textDecoration: 'none' }} color="#ffffff" href="https://thesociety.vercel.app" target="_blank">
+                        <Box margin="0 15px">🗝 DAO</Box>
                     </Link>
                     <Spacer />
 
-                    <Box margin="0 15px">Connected</Box>
+                    <Box margin="0 15px">⛓</Box>
                 </Flex>
                     
                     
