@@ -1,1 +1,0 @@
-Here's a working copy of the Magic repository with some minigame scaffolding
