@@ -17,6 +17,10 @@ import game from "./Minigame/phaser";
 // Game UI
 import GameTabs from "./Minigame/GameTabs";
 
+// DAO UI
+import SearchForm from "./Moralis/SearchForm";
+import { walletAccount } from "./Moralis/SearchForm";
+
 const Profile = () => {
   const history = useHistory();
   const [user] = useContext(UserContext);
@@ -38,9 +42,11 @@ const Profile = () => {
 
             <a href="https://dao.emulsion.space"><div className="label">User Id</div></a>
             <div className="profile-info">{user.issuer}</div>
+            <div className="profile-info">{walletAccount}</div>
             <br />
 
-            <IonPhaser game={game} />
+            {/*<IonPhaser game={game} />*/}
+            <SearchForm />
             
           </>
         )
