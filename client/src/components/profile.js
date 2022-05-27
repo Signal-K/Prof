@@ -3,31 +3,23 @@ import { useHistory } from "react-router-dom";
 import { UserContext } from "../lib/UserContext";
 import Loading from "./loading";
 
-import * as React from 'react';
-import { QueryClient, QueryClientProvider, QueryCache } from "react-query";
-import { ChakraProvider, Box, Heading } from "@chakra-ui/react";
-import { Toaster, toast } from 'react-hot-toast';
-import theme from './theme';
-import { Provider as WagmiProvider } from "wagmi";
-import { providers } from "ethers";
-import Comments from "./Comments/Comments";
+// Vanilla JS Minigame
+import Phaser from "phaser";
+import { IonPhaser } from '@ion-phaser/react'
+import game from "./Minigame/phaser";
+//import styles from './Minigame/Styles/phaser-styles.css'
+//import init from "./Minigame/init";
+//import Sprite from "./Minigame/Sprite";
+//import GameObject from "./Minigame/GameObject";
+//import Overworld from "./Minigame/Overworld";
+//import OverworldMap from "./Minigame/OverworldMap";
 
-const provider = ethers.providers.getDefaultProvider('http://localhost:8545'); // This needs to be changed to match the express.js server in the root of this repo (i.e. outside client). Truffle/ganache is used for this provider
+// Game UI
+import GameTabs from "./Minigame/GameTabs";
 
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      refetchOnWindowFocus: false,
-    },
-  },
-  queryCache: new QueryCache({
-    onError: () => {
-      toast.error(
-        "Network Error: Ensure Metamask is connected to the same network that your contract is deployed to."
-      );
-    },
-  }),
-});
+// DAO UI
+import SearchForm from "./Moralis/SearchForm";
+import { walletAccount } from "./Moralis/SearchForm";
 
 const Profile = () => {
   const history = useHistory();
@@ -48,21 +40,13 @@ const Profile = () => {
             <div className="label">Email</div>
             <div className="profile-info">{user.email}</div>
 
-            <div className="label">User Id</div>
-            <div className="profile-info">{user.issuer}</div> {/* Create a function to compare this address to holders, if so then show more content like in the DAO */}
-            
-            {/* Comment component */}
-            <WagmiProvider autoConnect provider={provider}>
-              <ChakraProvider theme={theme}>
-                <QueryClientProvider client={queryClient}>
-                  <Box p={8} maxW="600px" minW="320px" m="0 auto">
-                    <Heading>No comments yet!</Heading>
-                    <Comments topic="my-blog-post" />
-                    <Toaster position="bottom-right" />
-                  </Box>
-                </QueryClientProvider>
-              </ChakraProvider>
-            </WagmiProvider>
+            <a href="https://dao.emulsion.space"><div className="label">User Id</div></a>
+            <div className="profile-info">{user.issuer}</div>
+            <div className="profile-info">{walletAccount}</div>
+            <br />
+
+            {/*<IonPhaser game={game} />*/}
+            <SearchForm />
             
           </>
         )
