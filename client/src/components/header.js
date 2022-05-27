@@ -34,7 +34,7 @@ const Header = () => {
               size="sm"
               onPress={() => history.push("/")}
             >
-              Free Content
+              Home
             </TextButton>
           </li>
           <li>
