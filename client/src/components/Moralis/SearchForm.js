@@ -30,3 +30,5 @@ function SearchForm() {
 
 export default SearchForm;
 export const walletAccount = accounts;
+
+// Buildspace nft game -> make it fun for members as a minigame?

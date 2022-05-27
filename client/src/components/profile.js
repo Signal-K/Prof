@@ -20,6 +20,7 @@ import GameTabs from "./Minigame/GameTabs";
 // DAO UI
 import SearchForm from "./Moralis/SearchForm";
 import { walletAccount } from "./Moralis/SearchForm";
+//import editionDrop from "./Thirdweb/EditionDrop";
 
 const Profile = () => {
   const history = useHistory();
@@ -45,7 +46,9 @@ const Profile = () => {
             <div className="profile-info">{walletAccount}</div>
             <br />
 
-            {/*<IonPhaser game={game} />*/}
+            {/*
+            Only show this component if the web3 wallet has an NFT belonging to the Star Sailors collection
+            <IonPhaser game={game} />*/}
             <SearchForm />
             
           </>
