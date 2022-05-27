@@ -1,6 +1,8 @@
+import spinner from '../lib/spinner.svg';
+
 const Loading = () => (
   <div style={{ textAlign: "center" }}>
-    <img src="./spinner.svg" height="50px" alt="Loading" />
+    <img src={spinner} height="50px" alt="Loading" />
   </div>
 );
 

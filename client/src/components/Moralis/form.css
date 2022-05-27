@@ -1,0 +1,23 @@
+body {
+    margin: auto;
+}
+
+.App {
+    display: block;
+    margin: 5%;
+    margin-top: 2%;
+    border: 2px solid deepskyblue;
+    border-radius: 25px 25px 25px 25px;
+    min-height: 100vh;
+    height: fit-content;
+}
+
+.connect-button {
+    width: 100%;
+    margin-left: 45%;
+    margin-right: 45%;
+    margin-top: 5%;
+    height: 55px;
+    color: white;
+    background-color: deepskyblue
+}
