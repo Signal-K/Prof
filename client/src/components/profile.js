@@ -22,6 +22,12 @@ import SearchForm from "./Moralis/SearchForm";
 import { walletAccount } from "./Moralis/SearchForm";
 //import editionDrop from "./Thirdweb/EditionDrop";
 
+// Content (copy to home/premium content page(s))
+import Roadmap from "./Content/Roadmap";
+import Updates from "./Content/Updates";
+import TrailerContainer from './Content/Trailer';
+import MusicStreaming from './Content/Audio';
+
 const Profile = () => {
   const history = useHistory();
   const [user] = useContext(UserContext);
@@ -50,7 +56,12 @@ const Profile = () => {
             Only show this component if the web3 wallet has an NFT belonging to the Star Sailors collection
             <IonPhaser game={game} />*/}
             <SearchForm />
-            
+
+            {/* Home page (free content) components */}
+            <Roadmap />
+            <Updates />
+            <TrailerContainer />
+            <MusicStreaming />
           </>
         )
       )}
