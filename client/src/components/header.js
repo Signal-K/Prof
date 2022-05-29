@@ -34,7 +34,7 @@ const Header = () => {
               size="sm"
               onPress={() => history.push("/")}
             >
-              Home
+              🍀 Home
             </TextButton>
           </li>
           <li>
@@ -43,7 +43,7 @@ const Header = () => {
               size="sm"
               onPress={() => history.push("/premium-content")}
             >
-              Premium Content
+              🦔 Premium Content
             </TextButton>
           </li>
           {user?.loading ? (
@@ -57,12 +57,12 @@ const Header = () => {
                   size="sm"
                   onPress={() => history.push("/profile")}
                 >
-                  Profile
+                  🧪 Profile
                 </TextButton>
               </li>
               <li>
                 <TextButton color="warning" size="sm" onPress={logout}>
-                  Logout
+                  🪐 Logout
                 </TextButton>
               </li>
             </>

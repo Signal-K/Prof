@@ -7,6 +7,7 @@ import NFTContainer from "./NFTContainer";
 var accounts;
 function SearchForm() {
     const [walletAddress, setWalletAddress] = useState(null);
+    const [nfts, setNfts] = useState([]);
 
     const connectWallet = async () => {
         if (typeof window.ethereum !== 'undefined') {
@@ -26,6 +27,7 @@ function SearchForm() {
         const data = await response.json();
         console.log(data);
         //debugger
+        setNfts(data.items);
 
         // Testing with a confirmed wallet
         const confirmedResponse = await fetch(`https://api.rarible.org/v0.1/items/byOwner/?owner=ETHEREUM:0xCdc5929e1158F7f0B320e3B942528E6998D8b25c`);
@@ -46,7 +48,7 @@ function SearchForm() {
             <button className='connect-button' onClick={connectWallet}>
                 Connect Wallet
             </button>
-            <NFTContainer />
+            <NFTContainer nfts={nfts}/>
         </div>
     );
 }
