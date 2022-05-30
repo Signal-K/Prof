@@ -1,9 +1,12 @@
 import React from 'react';
+import NFTCard from './NFTCard';
 
-const NFTContainer = () => {
+const NFTContainer = ({ nfts }) => {
     return (
-        <div>
-
+        <div className='nft-container'>
+            {nfts.map((nfts, index) => {
+                return <NFTCard nft={nft} key={index} />
+            })}
         </div>
     )
 }
