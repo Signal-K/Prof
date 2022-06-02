@@ -7,7 +7,7 @@ export default class MainScene extends Phaser.Scene {
 
     preload() {
         console.log("preload");
-        this.load.atlas('female','assets/images/female.png','assets/images/female_atales.json');
+        this.load.atlas('female','assets/images/female.png','assets/images/female_atlas.json');
     }
 
     create() {

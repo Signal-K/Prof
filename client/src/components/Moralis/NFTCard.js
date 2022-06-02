@@ -4,7 +4,7 @@ const NFTCard = ({ nft }) => {
     return (
         <div className='card nft-card'>
             <img src={nft.meta.content[1].url} className="nft-image" />
-            <div classname="card content">
+            <div className="card content">
                 <div className="card content-item">
                     Contract Address:
                 </div>

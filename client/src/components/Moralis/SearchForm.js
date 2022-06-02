@@ -26,13 +26,7 @@ function SearchForm() {
         const response = await fetch(`https://api.rarible.org/v0.1/items/byOwner/?owner=ETHEREUM:${walletAddress}`);
         const data = await response.json();
         console.log(data);
-        //debugger
         setNfts(data.items);
-
-        // Testing with a confirmed wallet
-        const confirmedResponse = await fetch(`https://api.rarible.org/v0.1/items/byOwner/?owner=ETHEREUM:0xCdc5929e1158F7f0B320e3B942528E6998D8b25c`);
-        const confirmedData = await confirmedResponse.json();
-        console.log(confirmedData); // Even works with polygon mainnet!
     }
 
     // Every time the user's wallet address changes/is added, fetch their NFTs
