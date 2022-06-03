@@ -1,11 +1,25 @@
-import enum
-from tracemalloc import start
-from PIL import Image, ImageDraw # pillow library
+from PIL import Image, ImageDraw, ImageChops # pillow library
 import random
+import colorsys
+
+# For avatars
+import os
+#import random
+from typing import List
+# from PIL import Image
+from layer import Layer
 
 # Create a random colour that will be used for each line in the image
 def random_color():
-    return (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
+    h = random.random() # between 0 and 1
+    s = 1
+    v = 1
+
+    # Convert hsv colour code to (255) and then to RGB
+    float_rgb = colorsys.hsv_to_rgb(h, s, v)
+    rgb = [int(x * 255) for x in float_rgb]
+
+    return tuple(rgb)
 
 # Function for the blend/fade visual effect
 def interpolate(start_color, end_color, factor: float):
@@ -17,9 +31,11 @@ def interpolate(start_color, end_color, factor: float):
         int(start_color[2] * recip + end_color[2] * factor)
     )
 
-def generate_art():
+def generate_art(path: str):
     print("Generating art")
-    image_size_px = 128
+    target_size_px = 256
+    scale_factor = 2
+    image_size_px = target_size_px * scale_factor
 
     # Image colour setup
     image_bg_color = (0, 0, 0)
@@ -34,7 +50,7 @@ def generate_art():
         color=image_bg_color) # type, size/dimensions, colour
 
     # Create negative space
-    padding_px = 12 # 10% -> can render between 12px and width/height-12
+    padding_px = 16 * scale_factor
 
     # Draw lines for the images
     draw = ImageDraw.Draw(image)
@@ -65,6 +81,14 @@ def generate_art():
     thickness = 0
     n_points = len(points) - 1
     for i, point in enumerate(points): #// Loop through point array
+        # overlay canvas
+        overlay_image = Image.new(
+            "RGB",
+            size=(image_size_px, image_size_px),
+            color=image_bg_color)
+        overlay_draw = ImageDraw.Draw(overlay_image)
+
+        # Initial point params
         p1 = point
 
         # Check if at the end of list
@@ -76,13 +100,26 @@ def generate_art():
         line_xy = (p1, p2)
         color_factor = i / n_points
         line_color = interpolate(start_color, end_color, color_factor)
-        thickness += 1
-        draw.line(line_xy, fill=line_color, width=thickness)
+        thickness += 1 * scale_factor
+        overlay_draw.line(line_xy, fill=line_color, width=thickness)
+        image = ImageChops.add(image, overlay_image)
 
-    image.save("test_image.png")
+    image = image.resize((target_size_px, target_size_px), resample=Image.ANTIALIAS)
+    image.save(path)
 
 if __name__ == "__main__":
-    generate_art()
+    for i in range(10):
+        generate_art(f"test_image_{i}.png")
+
+"""
+Avatar generating class
+"""
+class AvatarGenerator:
+    def __init__(self, images_path: str):
+        self.layers: List[Layer] = self.load_image_layers(images_path)
+
+    def load_image_layers(self, images_path: str):
+        sub_paths = sorted(os.listdir(images_path))
 
 """
 As of right now, we have abstract generative art. How do we turn this into abstract pixel art, abstract game art (as in a more realistic/high-def art style, like what we have in Unity 3D) for the drop?
