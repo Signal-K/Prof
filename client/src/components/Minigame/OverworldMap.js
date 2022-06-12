@@ -27,7 +27,7 @@ window.OverworldMaps = { // Configuration for every map in the game
         lowerSrc: "/images/maps/DemoLower.png",
         upperSrc: "/images/maps/DemoUpper.png",
         gameObjects: {
-            character: new Person({
+            character: new Person({ 
                 x: utils.withGrid(5),
                 y: utils.withGrid(6),
             }),

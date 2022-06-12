@@ -117,9 +117,15 @@ Avatar generating class
 class AvatarGenerator:
     def __init__(self, images_path: str):
         self.layers: List[Layer] = self.load_image_layers(images_path)
+        self.background_color = (120, 150, 180)
+        self.rare_background_color = (255, 225, 150)
+        self.rare_background_chance = 0.05
+        self.output_path: str = "./output"
+        os.makedirs(self.output_path, exist_ok=True)
 
     def load_image_layers(self, images_path: str):
         sub_paths = sorted(os.listdir(images_path))
+        layers: List[Layer] = []
 
 """
 As of right now, we have abstract generative art. How do we turn this into abstract pixel art, abstract game art (as in a more realistic/high-def art style, like what we have in Unity 3D) for the drop?
