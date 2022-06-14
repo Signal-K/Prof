@@ -130,4 +130,6 @@ class AvatarGenerator:
 """
 As of right now, we have abstract generative art. How do we turn this into abstract pixel art, abstract game art (as in a more realistic/high-def art style, like what we have in Unity 3D) for the drop?
 Let's use this generative art as a placeholder, add some special effects (layers) like stars, etc
+Generative art -> (as placeholder for) generate_avatar.py
+Hook this into a minting/registration function
 """
