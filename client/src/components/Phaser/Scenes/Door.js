@@ -1,3 +1,5 @@
+import Phaser from "phaser";
+
 export default class Door extends Phaser.GameObjects.Container
 {
     constructor (name, scene, x, y)

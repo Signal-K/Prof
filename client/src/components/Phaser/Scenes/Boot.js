@@ -1,3 +1,5 @@
+import Phaser from "phaser";
+
 export default class Boot extends Phaser.Scene
 {
     constructor ()
@@ -7,7 +9,7 @@ export default class Boot extends Phaser.Scene
 
     preload ()
     {
-        this.load.image('loading', 'assets/games/bank-panic/loading.png');
+        this.load.image('loading', 'assets/phaser/loading.png');
     }
 
     create ()

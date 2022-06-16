@@ -1,3 +1,4 @@
+import Phaser from "phaser";
 import Door from './Door.js';
 
 export default class MainGame extends Phaser.Scene
@@ -6,17 +7,17 @@ export default class MainGame extends Phaser.Scene
     {
         super('MainGame');
 
-        this.hats;
-        this.goals;
-        this.gold;
-        this.doors;
+        this.hats = null;
+        this.goals = null;
+        this.gold = null;
+        this.doors = null;
 
         this.isPaused = false;
         this.goalsComplete = 0;
-        this.sign;
+        this.sign = null;
 
         this.level = 1;
-        this.levelImage;
+        this.levelImage = null;
 
         this.killDelay = 0.7;
         this.closeDurationLow = 2000;
