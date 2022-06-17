@@ -1,4 +1,5 @@
 import Phaser from "phaser";
+import { events, GAME_OVER } from "../Phaser.jsx";
 import Door from './Door.js';
 
 export default class MainGame extends Phaser.Scene
@@ -163,8 +164,10 @@ export default class MainGame extends Phaser.Scene
         });
     }
 
-    levelFail ()
-    {
+    levelFail () {
+        // On-chain event with user data and event info -> between react/phaser & react/moralis components
+        events.dispatch({ type: GAME_OVER, score: 100 }); // Return score/items as on-chain data
+
         this.isPaused = true;
 
         this.sign = this.add.image(512, -200, 'assets', 'gameOver');
