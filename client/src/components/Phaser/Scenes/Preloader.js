@@ -1,10 +1,46 @@
 import Phaser from "phaser";
+import { events, LOGIN_PLAYER } from "../Phaser";
+import { createStore, applyMiddleware } from "redux";
+import ThunkMiddleware from "redux-thunk";
+import { createLogger } from "redux-logger";
+import { emit } from "process";
+import { EventEmitter } from "stream";
+
+// Phaser event emitter
+var emitter = new Phaser.Events.EventEmitter();
+// Initial Phaser vars
+const initState = { players: [], score: 0, gameOver: false };
+
+// Reducer
+function reducer(state = initState, action) {
+    switch (action.type) {
+        case AUTH:
+            EventEmitter.emit("AUTH", ".");
+            return { ...state, players: [...state.players, action.player] };
+        default:
+            return state;
+    }
+}
+
+// Event types
+export const AUTH = "AUTH";
+
+// Redux
+export const authEvents = createStore(
+    reducer,
+    applyMiddleware(ThunkMiddleware, createLogger())
+)
 
 export default class Preloader extends Phaser.Scene
 {
     constructor ()
     {
         super('Preloader');
+        // Event handler for authenticated (web3) login
+        emitter.on("AUTH", (event) => {
+            console.log(event);
+            this.scene.state("MainMenu");
+        });
     }
 
     preload ()
@@ -52,8 +88,10 @@ export default class Preloader extends Phaser.Scene
 
         this.loading.setInteractive();
 
+        // Start button - to play/begin the game
         this.loading.once('pointerdown', () => {
-            this.scene.start('MainMenu');
+            //this.scene.start('MainMenu');
+            events.dispatch({ type: LOGIN_PLAYER, score: 0 }); // Dispatch player event to the app/Phaser component. Trigger web3 wallet when the game starts
         });
     }
 }
