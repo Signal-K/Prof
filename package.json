@@ -17,6 +17,9 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "react-moralis": "^1.4.0",
+    "redux": "^4.2.0",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.4.1",
     "stripe": "^8.134.0"
   }
 }
