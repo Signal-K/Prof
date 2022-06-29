@@ -54,3 +54,4 @@ contract Journal is ERC721, ERC721URIStorage, Ownable {
 }
 
 // Comments.sol will attach to this. Extends the proposal function in the DAO (signal-k/marketplace on gh), however will also allow for general-purpose posts (like Medium) without creating proposals
+// Component will likely be "Journal" -> ref based on relevant issues on github to see connecting files
