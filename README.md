@@ -1,3 +1,5 @@
+<!-- Originally at signal-k/theclub -> Code relating to the Signal Kinetics DAO -->
+
 Here's a working copy of the Magic repository with some minigame scaffolding
 
 # `client`
