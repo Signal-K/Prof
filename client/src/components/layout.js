@@ -12,7 +12,7 @@ const Layout = ({ children }) => (
         outline: none;
       }
       .container {
-        max-width: 42rem;
+        max-width: 100%;
         margin: 0 auto;
         padding: 0 10px;
       }

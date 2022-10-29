@@ -5,7 +5,7 @@ import { LifetimeContext } from "./lib/LifetimeContext";
 import { LifetimeAccessRequestStatusContext } from "./lib/LifetimeAccessRequestStatusContext";
 
 // Import UI components
-import Home from "./components/home";
+import Home from "./components/Home";
 import PremiumContent from "./components/premium-content";
 import Login from "./components/login";
 import SignUp from "./components/signup";
@@ -13,6 +13,8 @@ import Profile from "./components/profile";
 import Payment from "./components/payment";
 import PaymentForm from "./components/payment-form";
 import Layout from "./components/layout";
+
+import Dashboard from "./pages/Dashboard";
 
 // Import Magic-related things
 import { magic } from "./lib/magic";
@@ -65,6 +67,7 @@ function App() {
                 <Route path="/signup" component={SignUp} />
                 <Route path="/login" component={Login} />
                 <Route path="/profile" component={Profile} />
+                <Route path="/dashboard" component={Dashboard} />
                 <Route
                   path="/payment"
                   render={(props) => {

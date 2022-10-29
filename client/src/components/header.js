@@ -55,7 +55,7 @@ const Header = () => {
                 <TextButton
                   color="primary"
                   size="sm"
-                  onPress={() => history.push("/profile")}
+                  onPress={() => history.push("/dashboard")}
                 >
                   🧪 Profile
                 </TextButton>
