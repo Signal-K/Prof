@@ -6,8 +6,8 @@ import "@magiclabs/ui/dist/cjs/index.css";
 import { ThemeProvider } from "@magiclabs/ui";
 
 // Moralis Configuration
-const APP_ID = process.env.REACT_APP_MORALIS_APPLICATION_ID;
-const SERVER_URL = process.env.REACT_APP_MORALIS_SERVER_URL;
+const APP_ID = "BI5hagTDpD81Tc0hwFGn5kvW1nQgnjQKlDBrg0gT";
+const SERVER_URL = "https://pqrdt3y1tim2.usemoralis.com:2053/server";
 
 const Application = () => {
   const isServerInfo = APP_ID && SERVER_URL ? true : false;
