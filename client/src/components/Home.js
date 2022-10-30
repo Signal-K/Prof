@@ -1,6 +1,9 @@
+import Header from "./header";
+
 const Home = () => {
   return (
     <>
+      
       <h3 className="h3-header">Welcome to the Star Sailors DAO.</h3>
       <div>Read up on development news</div>
       <div>Connect with the team and fellow Star Sailors</div>

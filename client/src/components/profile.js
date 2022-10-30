@@ -2,6 +2,7 @@ import { useEffect, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { UserContext } from "../lib/UserContext";
 import Loading from "./loading";
+import Header from "./header";
 
 const Profile = () => {
   const history = useHistory();
@@ -19,6 +20,7 @@ const Profile = () => {
       ) : (
         user?.issuer && (
           <>
+            <Header />
             <div className="label">Email</div>
             <div className="profile-info">{user.email}</div>
 
