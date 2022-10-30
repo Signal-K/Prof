@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
+import { Switch, Route, BrowserRouter as Router, BrowserRouter } from "react-router-dom";
 import { UserContext } from "./lib/UserContext";
 import { LifetimeContext } from "./lib/LifetimeContext";
 import { LifetimeAccessRequestStatusContext } from "./lib/LifetimeAccessRequestStatusContext";
@@ -15,6 +15,7 @@ import PaymentForm from "./components/payment-form";
 import Layout from "./components/layout";
 
 import Dashboard from "./pages/Dashboard";
+import dbLayout from "./components/db-layout";
 
 // Import Magic-related things
 import { magic } from "./lib/magic";
@@ -51,6 +52,7 @@ function App() {
   }, []);
 
   return (
+    
     <Router>
       <Switch>
         <UserContext.Provider value={[user, setUser]}>
@@ -81,6 +83,8 @@ function App() {
                   }}
                 />
               </Layout>
+              <div>
+              </div>
             </LifetimeAccessRequestStatusContext.Provider>
           </LifetimeContext.Provider>
         </UserContext.Provider>
