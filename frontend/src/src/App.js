@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import { supabase } from './auth/supabaseClient';
-import Auth from './auth/auth';
-import Account from './components/Account';
 import './App.css';
+import { supabase } from './supabaseClient'
+import Auth from './components/Auth';
+import Account from './components/Account';
 
 function App() {
 
@@ -12,7 +12,7 @@ function App() {
     setSession(supabase.auth.session())
     supabase.auth.onAuthStateChange((_event, session) => {
       setSession(session)
-    }) // if auth state changes
+    })
   }, [])
 
   return (

@@ -112,3 +112,5 @@ const Account = ({ session }) => {
         </div>
     )
 }
+
+export default Account;

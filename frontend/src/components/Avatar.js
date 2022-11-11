@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { supabase } from '../auth/supabaseClient';
 import Icon from '../assets/Face.png';
 import camera from '../assets/camera on.png';
@@ -12,6 +12,46 @@ export default function Avatar({
     useEffect(() => {
         if (url) downloadImage(url);
     }, [url]);
+
+    const uploadAvatar = async () => {
+        try {
+            setUploading(true);
+
+            if (!event.target.files || event.target.files.length === 0) { // If the image file selected is 0
+                throw new Error('You must select an image to upload.');
+            }
+
+            const file = event.target.files[0]; // Gets this from the file upload (event)
+            const fileExt = file.name.split('.').pop(); // Extension of the file being uploaded (avatar should only be in image format)
+            const fileName = `${Math.random()}.${fileExt}`;
+            const filePath = `${fileName}`;
+
+            let { error: uploadError } = await supabase.storage.from("avatars").upload(filePath, file);
+
+            if (uploadError) {
+                throw uploadError;
+            }
+
+
+        } catch ( error ) {
+
+        }
+    }
+
+    const downloadImage = async (path) => {
+        try {
+            const { data, error } = await supabase.storage.from("avatars").download(path)
+            
+            if (error) {
+                throw error;
+            }
+
+            const url = URL.createObjectURL(data);
+            setAvatarUrl(url);
+        } catch ( error ) {
+            console.log("Error downloading image: ", error.message);
+        }
+    }
 
     return (
         <div style={{ width: size }} aria-live="polite" className='container mx-auto text-center'>
