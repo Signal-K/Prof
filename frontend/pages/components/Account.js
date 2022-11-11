@@ -1,10 +1,8 @@
-// get the fields values 
-import { useState, useEffect } from "react"
-import { supabase } from "../supabaseClient"
-import Avatar from './Avatar';
+import { useState, useEffect } from "react";
+import { supabase } from "../../client";
+import Avatar from "./Avatar";
 
 const Account = ( { session } ) => {
-
     const [loading, setLoading] = useState(true)
     const [username, setUsername] = useState(null)
     const [website, setWebsite] = useState(null)
@@ -129,10 +127,6 @@ const Account = ( { session } ) => {
       
     </div>
     )
-
-
 }
 
 export default Account;
-
-// update these values
