@@ -1,0 +1,2 @@
+[dependencies]
+reqwest = "0.11"
