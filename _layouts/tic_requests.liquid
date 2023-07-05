@@ -1,0 +1,6 @@
+{% assign tic_ids = "TIC-123, TIC-456, TIC-789" | split: ", " %}
+
+{% for tic_id in tic_ids %}
+  {% assign tic_id_length = tic_id | size %}
+  Tic ID: {{ tic_id }}, Length: {{ tic_id_length }}
+{% endfor %}
