@@ -1,0 +1,6 @@
+{% assign page_path = page.url %}
+{% assign request_count = site.data.request_counter[page_path] | default: 0 %}
+{% assign request_count_updated = request_count | plus: 1 %}
+{% assign site.data.request_counter[page_path] = request_count_updated %}
+
+Page: {{ page_path }}
